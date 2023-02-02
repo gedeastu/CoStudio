@@ -21,9 +21,27 @@
         }
     
       </script>
+      <script>
+        function myFunction() {
+          var less = document.getElementById("less");
+          var moreText = document.getElementById("more");
+          var btnText = document.getElementById("myBtn");
+        
+          if (less.style.display === "none") {
+            less.style.display = "inline";
+            btnText.innerHTML = "Read more"; 
+            moreText.style.display = "none";
+          } else {
+            less.style.display = "none";
+            btnText.innerHTML = "Read less"; 
+            moreText.style.display = "inline";
+          }
+        }
+        </script>
 </head>
 <body>
     <div class="container max-w-full">
+        <div class="fixed bg-sky-700 w-max p-6 rounded-full right-0 bottom-0 m-10 shadow-md border border-solid border-sky-800" id="popUp_chat"><button class="flex"><img src="/img/support.png" alt="" class="w-16"></button></div>
         <div id="header" class="max-h-max w-full bg-sky-800 opacity-95 fixed inline text-white shadow-md">
           <h1 class="font-semibold my-6 ml-56 text-4xl w-max float-left">CoStudio</h1>
           <nav id="navbar" class="float-right mt-5 inline-block mr-40">
@@ -100,12 +118,15 @@
 
         <div id="main" class="w-full">
         <div id="about">
-          <div class="max-w-7xl mx-auto my-10">
+          <div class="w-[100rem] mx-auto my-10 ">
             <div class="mx-auto max-w-max mb-4">
             <h2 class="text-3xl font-semibold mx-auto">About Us</h2>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A labore eaque est ratione minus libero accusantium eius sed, maxime assumenda illum aut consequuntur esse quibusdam pariatur quae praesentium odio quas commodi quam tempora quasi. Dolorum veniam cumque quod temporibus distinctio earum odio eius necessitatibus, doloribus consectetur aperiam tempora accusamus adipisci consequuntur iure voluptate in nobis quam esse. Numquam corrupti fuga iure nulla corporis delectus modi quod, dolorum beatae nobis error officiis, consectetur mollitia! Aliquid numquam molestias possimus asperiores voluptatibus repellat adipisci reiciendis amet, veniam accusamus officiis earum quidem sit fugiat eaque incidunt ipsum ea eligendi sunt quibusdam assumenda id dolorum?</p>
-          </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A labore eaque est ratione minus libero accusantium eius sed, maxime assumenda illum aut consequuntur esse quibusdam pariatur quae praesentium odio quas commodi quam tempora quasi. Dolorum veniam cumque quod temporibus distinctio earum odio eius necessitatibus, doloribus consectetur aperiam tempora accusamus adipisci consequuntur iure voluptate in nobis quam esse. Numquam corrupti fuga iure nulla corporis delectus modi quod, dolorum beatae nobis error officiis, consectetur mollitia! Aliquid numquam molestias possimus asperiores voluptatibus repellat adipisci reiciendis amet, veniam accusamus officiis earum quidem sit fugiat eaque incidunt ipsum ea eligendi sunt quibusdam assumenda 
+              id dolorum?<span id="less">...</span> <span id="more" class="hidden transition">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore minima architecto eum sapiente quis expedita vitae rem harum voluptas repudiandae tenetur exercitationem voluptatibus, iusto deserunt laudantium neque maxime suscipit corporis porro provident! Praesentium doloremque, enim excepturi iure autem dolor voluptates quaerat soluta iusto placeat fugit inventore numquam, 
+              harum quod culpa!</span></p>
+              <button onclick="myFunction()" id="myBtn" class="text-slate-500">Read more</button>
+            </div>
         </div>
 
         <div class="pt-3 mx-auto max-w-full flex justify-center" id="The_Card_01">
@@ -190,10 +211,11 @@
       </div>
       </div>
 
-      
+
+      <div></div>
+
       <div class="" id="packages_costumer">
         <div class="bg-sky-800 w-full flex justify-center shadow-lg">
-
           <div class="group">
           <div href="#" id="a_week" class="text-white -tracking-tighter max-w-xs text-center bg-cyan-700 rounded-xl my-9 shadow-md group-hover:scale-105 group-hover:transition">
             <span class="text-9xl font-bold">7</span><span class="text-5xl font-bold">days</span>
